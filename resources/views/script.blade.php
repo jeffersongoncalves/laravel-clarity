@@ -1,7 +1,7 @@
 @php($settings = app(\JeffersonGoncalves\Clarity\Settings\ClaritySettings::class))
 
 @if($settings->hasValidProjectId())
-    <script type="text/javascript">
+    <script @if(\Illuminate\Support\Facades\Vite::cspNonce()) nonce="{{ \Illuminate\Support\Facades\Vite::cspNonce() }}" @endif type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
